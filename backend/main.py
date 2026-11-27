@@ -70,6 +70,16 @@ app.add_middleware(
 )
 
 
+@app.get("/health")
+def health() -> dict:
+    conn = get_db()
+    try:
+        alert_count = conn.execute("SELECT COUNT(*) FROM alerts").fetchone()[0]
+    finally:
+        conn.close()
+    return {"status": "ok", "alerts": alert_count}
+
+
 def get_meta(conn: sqlite3.Connection) -> dict:
     rows = conn.execute(
         "SELECT source_system, last_checked_at, status FROM system_status"

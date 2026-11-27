@@ -2,6 +2,12 @@ def test_docs_available(client):
     assert client.get("/docs").status_code == 200
 
 
+def test_health(client):
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.json() == {"status": "ok", "alerts": 1}
+
+
 def test_all_high_warnings(client):
     response = client.get("/v1/alerts/all")
     assert response.status_code == 200
