@@ -2,17 +2,22 @@ import hashlib
 import os
 import re
 import sqlite3
+import time
 from pathlib import Path
 from typing import Literal, Optional
 
 import pymupdf
 from google import genai
 from google.genai import types
+from google.genai.errors import APIError
 from pydantic import BaseModel, Field
 from rapidfuzz import fuzz, process
 
 BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "disaster.db"
+
+DEFAULT_MODEL = "gemini-3.8-flash"
+DEFAULT_FALLBACK_MODEL = "gemini-3.5-flash-lite"
 
 
 def get_genai_client() -> genai.Client:
@@ -182,6 +187,49 @@ class PlaceResolver:
         return None
 
 
+def call_gemini_with_retry(
+    client: genai.Client,
+    raw_text: str,
+    source_system: str,
+    max_attempts: int = 3,
+) -> ExtractedReport:
+    primary = os.environ.get("GEMINI_MODEL", DEFAULT_MODEL).strip() or DEFAULT_MODEL
+    fallback_env = os.environ.get("GEMINI_FALLBACK_MODEL")
+    fallback = (
+        DEFAULT_FALLBACK_MODEL
+        if fallback_env is None
+        else fallback_env.strip()
+    )
+
+    models = [primary]
+    if fallback and fallback != primary:
+        models.append(fallback)
+
+    last_err: Exception | None = None
+    for model_name in models:
+        for attempt in range(max_attempts):
+            try:
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents=f"Extract disaster alert data from this {source_system} document:\n\n{raw_text}",
+                    config=types.GenerateContentConfig(
+                        system_instruction=SYSTEM_INSTRUCTION,
+                        response_mime_type="application/json",
+                        response_schema=ExtractedReport,
+                    ),
+                )
+                return ExtractedReport.model_validate_json(response.text)
+            except APIError as exc:
+                last_err = exc
+                if exc.code in (429, 500, 503, 504) and attempt < max_attempts - 1:
+                    wait = 2 ** (attempt + 1)
+                    time.sleep(wait)
+                    continue
+                break
+
+    raise last_err or RuntimeError("Gemini extraction failed.")
+
+
 def ingest_pdf(
     pdf_path: str | Path,
     source_system: Literal["dmc_sitrep", "nbro_landslide", "meteo_advisory"],
@@ -206,17 +254,7 @@ def ingest_pdf(
 
     if report is None:
         client = get_genai_client()
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=f"Extract disaster alert data from this {source_system} document:\n\n{raw_text}",
-            config=types.GenerateContentConfig(
-                system_instruction=SYSTEM_INSTRUCTION,
-                response_mime_type="application/json",
-                response_schema=ExtractedReport,
-                temperature=0.0,
-            ),
-        )
-        report = ExtractedReport.model_validate_json(response.text)
+        report = call_gemini_with_retry(client, raw_text, source_system)
     resolver = PlaceResolver(conn)
 
     conn.execute(

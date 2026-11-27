@@ -32,8 +32,12 @@ DMC_FEEDS = [
 ]
 
 HEADERS = {
-    "User-Agent": "SL-Disaster-OpenAPI-Prototype/1.0 (+https://github.com/open-civic-sl; polite-poller)",
-    "Accept": "text/html,application/pdf,*/*;q=0.8",
+    "User-Agent": (
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,application/pdf,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
 }
 
 REQUEST_DELAY_SEC = 4.0
@@ -70,12 +74,13 @@ def fetch_url(url: str, *, sleep=time.sleep) -> httpx.Response:
         logger.warning("DMC_INSECURE_TLS is set: SSL certificate verification is DISABLED")
 
     for attempt in range(1, MAX_ATTEMPTS + 1):
+        transport = httpx.HTTPTransport(local_address="0.0.0.0", verify=verify)
         try:
             with httpx.Client(
                 headers=HEADERS,
                 timeout=TIMEOUT_SEC,
                 follow_redirects=True,
-                verify=verify,
+                transport=transport,
             ) as client:
                 resp = client.get(url)
                 resp.raise_for_status()
