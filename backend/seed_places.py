@@ -122,12 +122,12 @@ def load_layer(conn: sqlite3.Connection, filepath: Path, admin_level: str):
         geom = simplify(shape(feat["geometry"]), tolerance=0.001, preserve_topology=True)
         min_lon, min_lat, max_lon, max_lat = geom.bounds
 
-        p1_code = get_prop(props, "admin1Pcode", "ADM1_PCODE")
-        p1_name = get_prop(props, "admin1Name_en", "ADM1_EN")
-        p2_code = get_prop(props, "admin2Pcode", "ADM2_PCODE")
-        p2_name = get_prop(props, "admin2Name_en", "ADM2_EN")
-        p3_code = get_prop(props, "admin3Pcode", "ADM3_PCODE")
-        p3_name = get_prop(props, "admin3Name_en", "ADM3_EN")
+        p1_code = get_prop(props, "admin1Pcode", "ADM1_PCODE", "adm1_pcode")
+        p1_name = get_prop(props, "admin1Name_en", "ADM1_EN", "adm1_name")
+        p2_code = get_prop(props, "admin2Pcode", "ADM2_PCODE", "adm2_pcode")
+        p2_name = get_prop(props, "admin2Name_en", "ADM2_EN", "adm2_name")
+        p3_code = get_prop(props, "admin3Pcode", "ADM3_PCODE", "adm3_pcode")
+        p3_name = get_prop(props, "admin3Name_en", "ADM3_EN", "adm3_name")
 
         if admin_level == "province":
             p_code, name_en = p1_code, p1_name
