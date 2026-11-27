@@ -1,6 +1,6 @@
 import sqlite3
 
-import fitz
+import pymupdf
 
 import extractor
 
@@ -54,7 +54,7 @@ def test_ingest_pdf_without_api_key(db_path, tmp_path, monkeypatch):
     monkeypatch.setattr(extractor, "get_genai_client", forbidden_client)
 
     pdf_path = tmp_path / "bulletin.pdf"
-    doc = fitz.open()
+    doc = pymupdf.open()
     page = doc.new_page()
     page.insert_text(
         (72, 72),

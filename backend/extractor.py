@@ -5,7 +5,7 @@ import sqlite3
 from pathlib import Path
 from typing import Literal, Optional
 
-import fitz  # PyMuPDF
+import pymupdf
 from google import genai
 from google.genai import types
 from pydantic import BaseModel, Field
@@ -85,7 +85,7 @@ Rules:
 
 
 def extract_pdf_text(pdf_path: Path) -> str:
-    doc = fitz.open(pdf_path)
+    doc = pymupdf.open(pdf_path)
     pages = [page.get_text("text") for page in doc]
     doc.close()
     return "\n--- PAGE BREAK ---\n".join(pages).strip()
