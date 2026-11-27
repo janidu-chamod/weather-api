@@ -1,0 +1,297 @@
+{
+  "issued_at": "2026-11-26 16:00",
+  "expires_at": "2026-11-27 16:00",
+  "headline_summary": "NBRO landslide early warning (2nd update) for six districts, valid 26 Nov 16:00 to 27 Nov 16:00.",
+  "alerts": [
+    {
+      "location_name": "Bulathsinhala",
+      "parent_district": "Kalutara",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Bulathsinhala"
+    },
+    {
+      "location_name": "Palindanuwara",
+      "parent_district": "Kalutara",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Palindanuwara"
+    },
+    {
+      "location_name": "Thumpane",
+      "parent_district": "Kandy",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Thumpane"
+    },
+    {
+      "location_name": "Hatharaliyadda",
+      "parent_district": "Kandy",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Hatharaliyadda"
+    },
+    {
+      "location_name": "Udapalatha",
+      "parent_district": "Kandy",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Udapalatha"
+    },
+    {
+      "location_name": "Ganga Ihala Korale",
+      "parent_district": "Kandy",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Ganga Ihala Korale"
+    },
+    {
+      "location_name": "Udadumbara",
+      "parent_district": "Kandy",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Udadumbara"
+    },
+    {
+      "location_name": "Doluwa",
+      "parent_district": "Kandy",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Doluwa"
+    },
+    {
+      "location_name": "Yatinuwara",
+      "parent_district": "Kandy",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Yatinuwara"
+    },
+    {
+      "location_name": "Aranayaka",
+      "parent_district": "Kegalle",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Aranayaka"
+    },
+    {
+      "location_name": "Dehiowita",
+      "parent_district": "Kegalle",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Dehiowita"
+    },
+    {
+      "location_name": "Ruwanwella",
+      "parent_district": "Kegalle",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Ruwanwella"
+    },
+    {
+      "location_name": "Rattota",
+      "parent_district": "Matale",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Rattota"
+    },
+    {
+      "location_name": "Kotmale East",
+      "parent_district": "Nuwara Eliya",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Kotmale East"
+    },
+    {
+      "location_name": "Nildandahinna",
+      "parent_district": "Nuwara Eliya",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Nildandahinna"
+    },
+    {
+      "location_name": "Kothmale West",
+      "parent_district": "Nuwara Eliya",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Kothmale West"
+    },
+    {
+      "location_name": "Norwood",
+      "parent_district": "Nuwara Eliya",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Norwood"
+    },
+    {
+      "location_name": "Ambagamuwa Korale",
+      "parent_district": "Nuwara Eliya",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Ambagamuwa Korale"
+    },
+    {
+      "location_name": "Thalawakele",
+      "parent_district": "Nuwara Eliya",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Thalawakele"
+    },
+    {
+      "location_name": "Walapane",
+      "parent_district": "Nuwara Eliya",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Walapane"
+    },
+    {
+      "location_name": "Kuruwita",
+      "parent_district": "Ratnapura",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Kuruwita"
+    },
+    {
+      "location_name": "Kiriella",
+      "parent_district": "Ratnapura",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "low",
+      "native_level": "Level 1 (Yellow)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Kiriella"
+    },
+    {
+      "location_name": "Udunuwara",
+      "parent_district": "Kandy",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "high",
+      "native_level": "Level 2 (Amber)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Udunuwara"
+    },
+    {
+      "location_name": "Kegalle",
+      "parent_district": "Kegalle",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "high",
+      "native_level": "Level 2 (Amber)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Kegalle"
+    },
+    {
+      "location_name": "Yatiyanthota",
+      "parent_district": "Kegalle",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "high",
+      "native_level": "Level 2 (Amber)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Yatiyanthota"
+    },
+    {
+      "location_name": "Rambukkana",
+      "parent_district": "Kegalle",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "high",
+      "native_level": "Level 2 (Amber)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Rambukkana"
+    },
+    {
+      "location_name": "Galigamuwa",
+      "parent_district": "Kegalle",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "high",
+      "native_level": "Level 2 (Amber)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Galigamuwa"
+    },
+    {
+      "location_name": "Bulathkohupitiya",
+      "parent_district": "Kegalle",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "high",
+      "native_level": "Level 2 (Amber)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Bulathkohupitiya"
+    },
+    {
+      "location_name": "Mawanella",
+      "parent_district": "Kegalle",
+      "admin_level": "ds_division",
+      "hazard": "landslide",
+      "severity": "high",
+      "native_level": "Level 2 (Amber)",
+      "reason": "Potential landslide risk in the Divisional Secretariat Division and surrounding areas, based on cumulative rainfall and the weather forecast.",
+      "source_snippet": "Mawanella"
+    }
+  ]
+}

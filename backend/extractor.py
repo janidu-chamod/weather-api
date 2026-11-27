@@ -186,6 +186,7 @@ def ingest_pdf(
     pdf_path: str | Path,
     source_system: Literal["dmc_sitrep", "nbro_landslide", "meteo_advisory"],
     source_url: Optional[str] = None,
+    report: Optional[ExtractedReport] = None,
 ) -> dict:
     pdf_path = Path(pdf_path)
     raw_text = extract_pdf_text(pdf_path)
@@ -203,19 +204,19 @@ def ingest_pdf(
         conn.close()
         return {"status": "skipped_duplicate", "document_id": existing[0]}
 
-    client = get_genai_client()
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=f"Extract disaster alert data from this {source_system} document:\n\n{raw_text}",
-        config=types.GenerateContentConfig(
-            system_instruction=SYSTEM_INSTRUCTION,
-            response_mime_type="application/json",
-            response_schema=ExtractedReport,
-            temperature=0.0,
-        ),
-    )
-
-    report = ExtractedReport.model_validate_json(response.text)
+    if report is None:
+        client = get_genai_client()
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=f"Extract disaster alert data from this {source_system} document:\n\n{raw_text}",
+            config=types.GenerateContentConfig(
+                system_instruction=SYSTEM_INSTRUCTION,
+                response_mime_type="application/json",
+                response_schema=ExtractedReport,
+                temperature=0.0,
+            ),
+        )
+        report = ExtractedReport.model_validate_json(response.text)
     resolver = PlaceResolver(conn)
 
     conn.execute(
