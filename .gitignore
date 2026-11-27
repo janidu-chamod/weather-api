@@ -9,3 +9,4 @@ venv/
 *.db-shm
 backend/data/
 backend/fixtures/*.pdf
+.pytest_cache/
